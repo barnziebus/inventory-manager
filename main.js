@@ -1,13 +1,24 @@
-fetch('database.json')
-    .then(response => {
-    if (!response.ok) {
-        throw new Error('Network response was not ok');
-    }
-    return response.json();
-    })
-    .then(jsonData => {
-    console.log(jsonData);
-    })
-    .catch(error => {
-    console.error('Error:', error);
-    });
+import { dbHandler } from "./databaseHandler.js";
+
+console.log(`main loaded`);
+
+// Example usage:
+const myDbHandler = new dbHandler();
+
+let rawDatabase;
+
+// Later, log the database when it's available using a .then() block
+myDbHandler.loadDatabase().then(database => {
+  handleDatabase(database)
+});
+
+let debugButton = document.getElementById("debugButton");
+debugButton.addEventListener("click", () => {
+    rawDatabase = myDbHandler.getDatabase()
+    handleDatabase(rawDatabase)
+})
+
+function handleDatabase(database) {
+    
+    console.log(database)
+}
