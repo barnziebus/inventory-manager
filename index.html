@@ -3,10 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="table.css">
     <title>Inventory Manager</title>
 </head>
 <body>
-    <button id="debugButton"></button>
+    <h1>Warhammer Painting Database</h1>
+    <div id="tableContainer">
+        <table id="databaseTable">
+            <tr>
+                <th>Paint Name</th>
+                <th>Paint Colour</th>
+                <th>Paint Type</th>
+                <th>Owned</th>
+                <th>Wishlist</th>
+                <th>Price</th> 
+                <th>Delete</th> 
+            </tr>       
+        </table>
+    </div>
 
     <script src="databaseHandler.js" type="module"></script>
     <script src="database.js" type="module"></script>

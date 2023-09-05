@@ -1,4 +1,4 @@
-let database = {
+export let database = {
     "paints": {
       "paint name": {
         "range": "GW paint range: base/shade/layer/dry",
