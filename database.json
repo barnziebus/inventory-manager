@@ -125,23 +125,5 @@
       "color type": "beige",
       "hex": "#A29E91"
     }
-    
-
-
-  },
-  "recipes": {
-    "example": {
-      "base": "example base paint",
-      "shade": "example shade",
-      "layer 1": "example layer 1",
-      "layer 2": "example layer 2",
-      "edge highlight": "example edge highlight"
-    }
   }
-}
-
-"": {
-  "range": "",
-  "color type": "",
-  "hex": "#"
-},
+} 
