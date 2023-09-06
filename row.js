@@ -78,5 +78,9 @@ export class Row{
         let deleteButton = document.createElement("button");
         deleteButton.innerText = "❌"
         cellContainer.appendChild(deleteButton)
+
+        deleteButton.addEventListener("click", () => {
+            this.rowContainer.remove()
+        })
     }
 }
