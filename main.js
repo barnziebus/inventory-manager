@@ -1,22 +1,10 @@
 import { database } from "./database.js";
-import { Row } from "./row.js";
+import { Table } from "./table.js";
 
 
 console.log(`main loaded`);
 
-buildTable()
-
-function buildTable() {
-  let table = document.getElementById("databaseTable");
-  for (let paint in database.paints) {
-    let newRow = document.createElement("tr");
-    if (paint !== 'paint name') {
-      let inputData = database['paints'][paint]
-      new Row(newRow, inputData)
-      table.appendChild(newRow)
-    }
-  }
-}
+new Table(database)
 
 // function buildTable() {
 //   let table = document.getElementById("databaseTable");

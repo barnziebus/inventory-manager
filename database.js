@@ -46,17 +46,25 @@ export let database = {
         {"name": "ceramite white",
         "type": "base",
         "color type": "white",
-        "hex": "#FFFFFF"},
+        "hex": "#FFFFFF",
+        "owned": 0,
+        "wishlist": "Y",
+        "price": 2.75
+      },
       
         {"name": "daemonette hide",
         "type": "base",
         "color type": "purple",
-        "hex": "#696684"},
+        "hex": "#696684",
+        "price": 4.75
+      },
       
         {"name": "death guard green",
         "type": "base",
         "color type": "green",
-        "hex": "#848A66"},
+        "hex": "#848A66",
+        "wishlist": "N"
+      },
       
         {"name": "deathwood forest",
         "type": "base",
