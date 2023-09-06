@@ -1,133 +1,133 @@
 export let database = {
-    "paints": {
-      "paint name": {
-        "range": "GW paint range: base/shade/layer/dry",
-        "color type": "color: black, blue, red, green, etc.",
-        "hex": "#XXXXXX"
-      },
-      "abaddon black": {
-        "range": "base",
+    "paints": [
+        {"name": "abaddon black", 
+        "type": "base",
         "color type": "black",
-        "hex": "#231F20"
-      },
-      "averland sunset": {
-        "range": "base",
+        "hex": "#231F20"},
+
+        {"name": "averland sunset", 
+        "type": "base",
         "color type": "yellow",
-        "hex": "#FDB825"
-      },
-      "balthasar gold": {
-        "range": "base",
+        "hex": "#FDB825"},
+
+        {"name": "balthasar gold", 
+        "type": "base",
         "color type": "gold",
-        "hex": "#A47552"
-      },
-      "bugmans glow": {
-        "range": "base",
+        "hex": "#A47552"},
+
+        {"name": "bugmans glow", 
+        "type": "base",
         "color type": "beige",
-        "hex": "#834F44"
-      },
-      "caledor sky": {
-        "range": "base",
+        "hex": "#834F44"},
+
+        {"name": "caledor sky",
+        "type": "base",
         "color type": "blue",
-        "hex": "#396E9E"
-      },
-      "caliban green": {
-        "range": "base",
+        "hex": "#396E9E"},
+      
+        {"name": "caliban green",
+        "type": "base",
         "color type": "green",
-        "hex": "#00401F"
-      },
-      "castellan green": {
-        "range": "base",
+        "hex": "#00401F"},
+      
+        {"name": "castellan green",
+        "type": "base",
         "color type": "green",
-        "hex": "#314821"
-      },
-      "celestra grey": {
-        "range": "base",
+        "hex": "#314821"},
+      
+        {"name": "celestra grey",
+        "type": "base",
         "color type": "grey",
-        "hex": "#90A8A8"
-      },
-      "ceramite white": {
-        "range": "base",
+        "hex": "#90A8A8"},
+      
+        {"name": "ceramite white",
+        "type": "base",
         "color type": "white",
-        "hex": "#FFFFFF"
-      },
-      "daemonette hide": {
-        "range": "base",
+        "hex": "#FFFFFF"},
+      
+        {"name": "daemonette hide",
+        "type": "base",
         "color type": "purple",
-        "hex": "#696684"
-      },
-      "death guard green": {
-        "range": "base",
+        "hex": "#696684"},
+      
+        {"name": "death guard green",
+        "type": "base",
         "color type": "green",
-        "hex": "#848A66"
-      },
-      "deathwood forest": {
-        "range": "base",
+        "hex": "#848A66"},
+      
+        {"name": "deathwood forest",
+        "type": "base",
         "color type": "green",
-        "hex": "#5C6730"
-      },
-      "Dryard Bark": {
-        "range": "base",
+        "hex": "#5C6730"},
+      
+        {"name": "Dryard Bark",
+        "type": "base",
         "color type": "black",
-        "hex": "#33312D"
-      },
-      "incubi darkness": {
-        "range": "base",
+        "hex": "#33312D"},
+      
+        {"name": "incubi darkness",
+        "type": "base",
         "color type": "blue",
-        "hex": "#0B474A"
-      },
-      "jokaero orange": {
-        "range": "base",
+        "hex": "#0B474A"},
+      
+        {"name": "jokaero otype",
+        "type": "base",
         "color type": "red",
-        "hex": "#EE3823"
-      },
-      "kantor blue": {
-        "range": "base",
+        "hex": "#EE3823"},
+      
+        {"name": "kantor blue",
+        "type": "base",
         "color type": "blue",
-        "hex": "#002151"
-      },
-      "khorne red": {
-        "range": "base",
+        "hex": "#002151"},
+      
+        {"name": "khorne red",
+        "type": "base",
         "color type": "red",
-        "hex": "#6A0001"
-      },
-      "leadbelcher": {
-        "range": "base",
+        "hex": "#6A0001"},
+      
+        {"name": "leadbelcher",
+        "type": "base",
         "color type": "silver",
-        "hex": "#888D8F"
-      },
-      "macragge blue": {
-        "range": "base",
+        "hex": "#888D8F"},
+      
+        {"name": "macragge blue",
+        "type": "base",
         "color type": "blue",
-        "hex": "#0D407F"
-      },
-      "mechanicus standard grey": {
-        "range": "base",
+        "hex": "#0D407F"},
+      
+        {"name": "mechanicus standard grey",
+        "type": "base",
         "color type": "grey",
-        "hex": "#3D4B4D"
-      },
-      "mephiston red": {
-        "range": "base",
+        "hex": "#3D4B4D"},
+      
+        {"name": "mephiston red",
+        "type": "base",
         "color type": "red",
-        "hex": "#9A1115"
-      },
-      "mournfang brown": {
-        "range": "base",
+        "hex": "#9A1115"},
+      
+        {"name": "mournfang brown",
+        "type": "base",
         "color type": "brown",
-        "hex": "#6409090"
-      },
-      "naggaroth night": {
-        "range": "base",
+        "hex": "#640909"},
+      
+        {"name": "naggaroth night",
+        "type": "base",
         "color type": "purple",
-        "hex": "#3D3354"
-      },
-      "rakarth flesh": {
-        "range": "base",
+        "hex": "#3D3354"},
+      
+        {"name": "rakarth flesh",
+        "type": "base",
         "color type": "beige",
-        "hex": "#A29E91"
-      }
-    }
+        "hex": "#A29E91"},
+    
+    ]
   } 
 
+
+        //   {"name": "paint name",
+        // "type": "GW paint type: base/shade/layer/dry",
+        // "color type": "color: black, blue, red, green, etc.",
+        // "hex": "#XXXXXX"},
 // },
 // "recipes": {
 //   "example": {
@@ -141,7 +141,7 @@ export let database = {
 // }
 
 // "": {
-// "range": "",
+// "type": "",
 // "color type": "",
 // "hex": "#"
 // },
