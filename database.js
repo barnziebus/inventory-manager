@@ -5,10 +5,13 @@ export let database = {
         "color type": "black",
         "hex": "#231F20"},
 
-        {"name": "averland sunset", 
-        "type": "base",
-        "color type": "yellow",
-        "hex": "#FDB825"},
+        {
+          "name": "averland sunset", 
+          "type": "base",
+          "color type": "yellow",
+          "hex": "#FDB825",
+          "owned": 1,
+      },
 
         {"name": "balthasar gold", 
         "type": "base",
