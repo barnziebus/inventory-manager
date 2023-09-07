@@ -14,8 +14,18 @@ export class Table{
             "delete": document.getElementById("deleteHeader"),
         };
 
+        this.searchEls = {
+            "name": document.getElementById("nameSearchInput"),
+            "color": document.getElementById("colorSearchInput"),
+            "type": document.getElementById("typeSearchInput"),
+            "owned": document.getElementById("ownedSearchInput"),
+            "wishlist": document.getElementById("wishlistSearchInput"),
+            "price": document.getElementById("priceSearchInput"),
+        }
+
         this.buildTable(database)
         this.setHeaderListeners()
+        this.setSearchListeneres()
     }
 
     buildTable(database) {
@@ -27,6 +37,27 @@ export class Table{
             this.table.appendChild(newRow)
             }
         }
+    }
+
+    setSearchListeneres() {
+        this.searchEls["name"].addEventListener("input", () => {
+            this.searchTableCol(this.searchEls["name"], 0)
+        })
+        this.searchEls["color"].addEventListener("input", () => {
+            this.searchTableCol(this.searchEls["color"], 1)
+        })
+        this.searchEls["type"].addEventListener("input", () => {
+            this.searchTableCol(this.searchEls["type"], 2)
+        })
+        this.searchEls["owned"].addEventListener("input", () => {
+            this.searchTableCol(this.searchEls["owned"], 3)
+        })
+        this.searchEls["wishlist"].addEventListener("input", () => {
+            this.searchTableCol(this.searchEls["wishlist"], 4)
+        })
+        this.searchEls["price"].addEventListener("input", () => {
+            this.searchTableCol(this.searchEls["price"], 5)
+        })
     }
 
     setHeaderListeners() {
@@ -51,6 +82,23 @@ export class Table{
         
     }
 
+    searchTableCol(inputEl, columnIndex) {
+        let filter = inputEl.value.toUpperCase();
+        let rows = this.table.getElementsByTagName("tr");
+
+        for (let i=2; i < rows.length; i++) {
+            let td = rows[i].getElementsByTagName("span")[columnIndex];
+            if (td) {
+                let textValue = td.textContent || td.innerText;
+                if (textValue.toUpperCase().indexOf(filter) > -1) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none"
+                }
+            }
+        }
+    }
+
     sortTable(n) {
         let switching = true;
         let dir = "asc";
@@ -62,7 +110,7 @@ export class Table{
             switching = false;
             let rows = this.table.rows;
 
-            for (i=1; i < (rows.length - 1); i++) { //loop through all rows except the header row
+            for (i=2; i < (rows.length - 1); i++) { //loop through all rows except the header row
                 shouldSwitch = false;
 
                 let x = rows[i].getElementsByTagName("span")[n];
