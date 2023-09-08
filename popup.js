@@ -19,6 +19,7 @@ export class PopupForm{
     addListeners() {
         this.popupBackground.addEventListener("click", (event) => {
             // Check if the clicked element is NOT a descendant of the popup form
+            event.preventDefault()
             if (!this.popupForm.contains(event.target)) {
                 this.closePopupForm();
             }
@@ -66,6 +67,6 @@ export class PopupForm{
     }
 
     setFormPrice(price) {
-        this.popupEls["price"].placeholder = price
+        this.popupEls["price"].placeholder = "£" + price
     }
 }
