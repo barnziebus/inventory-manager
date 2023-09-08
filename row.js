@@ -1,5 +1,5 @@
 export class Row{
-    constructor(rowContainer, rowData) {
+    constructor(rowContainer, rowData, popupForm) {
         this.rowContainer = rowContainer;
         this.rowData = rowData;
         this.cellContainers = {
@@ -12,16 +12,23 @@ export class Row{
             "delete": document.createElement("td"),
         };
 
-        this.buildRow();
+        this.buildRow(popupForm);
     }
 
-    buildRow() {
+    buildRow(popupForm) {
         for (let element in this.cellContainers) {
             this.rowContainer.appendChild(this.cellContainers[element]);
         };
         this.populateData(this.cellContainers, this.rowData);
         this.addDeleteButton(this.cellContainers['delete'])
+        this.setRowListener(popupForm)
     };
+
+    setRowListener(popupForm) {
+        this.rowContainer.addEventListener("click", () => {
+            popupForm.openPopupForm() //function to open the popup form goes here
+        })
+    }
 
     populateData(containers, rowData) {
         this.paintName(containers['name'], rowData['name']);

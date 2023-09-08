@@ -1,7 +1,7 @@
 import { Row } from "./row.js";
 
 export class Table{
-    constructor(database) {
+    constructor(database, popupForm) {
         this.table = document.getElementById("databaseTable");
 
         this.headerEls = {
@@ -23,17 +23,17 @@ export class Table{
             "price": document.getElementById("priceSearchInput"),
         }
 
-        this.buildTable(database)
+        this.buildTable(database, popupForm)
         this.setHeaderListeners()
         this.setSearchListeneres()
     }
 
-    buildTable(database) {
+    buildTable(database, popupForm) {
         for (let paint in database.paints) {
             let newRow = document.createElement("tr");
             if (paint !== 'paint name') {
             let inputData = database['paints'][paint]
-            new Row(newRow, inputData)
+            new Row(newRow, inputData, popupForm)
             this.table.appendChild(newRow)
             }
         }
