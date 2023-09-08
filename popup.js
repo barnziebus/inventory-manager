@@ -10,7 +10,9 @@ export class PopupForm{
             type: document.getElementById("formType"),
             owned: document.getElementById("formOwned"),
             wishlist: document.getElementById("formWishlist"),
-            price: document.getElementById("formPrice")
+            price: document.getElementById("formPrice"),
+            save: document.getElementById("formSave"),
+            cancel: document.getElementById("formCancel")
         }
 
         this.addListeners()
@@ -24,6 +26,14 @@ export class PopupForm{
                 this.closePopupForm();
             }
         });
+
+        this.popupEls.save.addEventListener("click", () => {
+            this.saveForm()
+        })
+
+        this.popupEls.cancel.addEventListener("click", () => {
+            this.closePopupForm()
+        })
     }
 
     openPopupForm(rowData) {
@@ -39,8 +49,6 @@ export class PopupForm{
     }
 
     closePopupForm() {
-        console.log("close popup")
-
         this.popupBackground.style.display = "none";
         this.popupForm.style.display = "none"
     }
@@ -63,10 +71,18 @@ export class PopupForm{
     }
 
     setFormWishlist(wishlist) {
-        this.popupEls["wishlist"].placeholder = wishlist
+        let wishlistText = "❌";
+        if (wishlist) {
+            wishlistText = "✅"
+        }
+        this.popupEls["wishlist"].placeholder = wishlistText
     }
 
     setFormPrice(price) {
         this.popupEls["price"].placeholder = "£" + price
+    }
+
+    saveForm() {
+        console.log("save form")
     }
 }

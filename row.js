@@ -20,7 +20,7 @@ export class Row{
             this.rowContainer.appendChild(this.cellContainers[element]);
         };
         this.populateData(this.cellContainers, this.rowData);
-        this.addDeleteButton(this.cellContainers['delete'])
+        //this.addDeleteButton(this.cellContainers['delete'])
         this.setRowListener(popupForm)
     };
 
@@ -71,13 +71,20 @@ export class Row{
 
     wishlist(cellContainer) {
         let wishlistEl = document.createElement("span");
-        wishlistEl.innerText = this.rowData['wishlist'];
+        
+        let wishlist = this.rowData['wishlist'];
+        let wishlistText = "❌";
+        if (wishlist) {
+            wishlistText = "✅"
+        }
+
+        wishlistEl.innerText = wishlistText;
         cellContainer.appendChild(wishlistEl);
     }
 
     price(cellContainer) {
         let priceEl = document.createElement("span");
-        priceEl.innerText = this.rowData["price"];
+        priceEl.innerText = "£" + this.rowData["price"];
         cellContainer.appendChild(priceEl)
     }
 
