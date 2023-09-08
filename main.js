@@ -5,5 +5,10 @@ import { PopupForm } from "./popup.js";
 
 console.log(`main loaded`);
 
-let popupForm = new PopupForm()
-new Table(database, popupForm)
+let popupForm = new PopupForm(saveForm)
+let table = new Table(database, popupForm)
+
+function saveForm() {
+    console.log("saved form")
+    table.updateTableData()
+}

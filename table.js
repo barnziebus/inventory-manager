@@ -4,6 +4,8 @@ export class Table{
     constructor(database, popupForm) {
         this.table = document.getElementById("databaseTable");
 
+        this.rows = []
+
         this.headerEls = {
             "name": document.getElementById("nameHeader"),
             "color": document.getElementById("colorHeader"),
@@ -33,8 +35,9 @@ export class Table{
             let newRow = document.createElement("tr");
             if (paint !== 'paint name') {
             let inputData = database['paints'][paint]
-            new Row(newRow, inputData, popupForm)
+            let row = new Row(newRow, inputData, popupForm)
             this.table.appendChild(newRow)
+            this.rows.push(row)
             }
         }
     }

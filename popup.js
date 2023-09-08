@@ -28,7 +28,7 @@ export class PopupForm{
         });
 
         this.popupEls.save.addEventListener("click", () => {
-            this.saveForm()
+            //this.saveForm()
         })
 
         this.popupEls.cancel.addEventListener("click", () => {
@@ -80,9 +80,5 @@ export class PopupForm{
 
     setFormPrice(price) {
         this.popupEls["price"].placeholder = "£" + price
-    }
-
-    saveForm() {
-        console.log("save form")
     }
 }

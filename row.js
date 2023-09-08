@@ -1,5 +1,6 @@
 export class Row{
     constructor(rowContainer, rowData, popupForm) {
+        this.popupForm = popupForm;
         this.rowContainer = rowContainer;
         this.rowData = rowData;
         this.cellContainers = {
