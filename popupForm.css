@@ -16,3 +16,11 @@
     margin: 20px;
     padding: 20px;
 }
+
+.color-swatch {
+    display: inline-block;
+    background-color: none;
+    border-radius: 3px;
+    min-width: 100px;
+    min-height: 15px;
+}

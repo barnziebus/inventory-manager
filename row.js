@@ -26,7 +26,7 @@ export class Row{
 
     setRowListener(popupForm) {
         this.rowContainer.addEventListener("click", () => {
-            popupForm.openPopupForm() //function to open the popup form goes here
+            popupForm.openPopupForm(this.rowData) //function to open the popup form goes here
         })
     }
 

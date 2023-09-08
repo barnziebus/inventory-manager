@@ -9,3 +9,12 @@ td {
 th {
     cursor: pointer;
 }
+
+tr {
+    background-color: rgb(244, 245, 189);
+    cursor: pointer;
+}
+
+tr:hover {
+    background-color: azure;
+}
