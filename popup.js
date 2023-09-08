@@ -1,5 +1,5 @@
 export class PopupForm{
-    constructor() {
+    constructor(saveData) {
         this.popupBackground = document.getElementById("popup-background");
         this.popupForm = document.getElementById("popup-form");
 
@@ -15,10 +15,10 @@ export class PopupForm{
             cancel: document.getElementById("formCancel")
         }
 
-        this.addListeners()
+        this.addListeners(saveData)
     }
 
-    addListeners() {
+    addListeners(saveData) {
         this.popupBackground.addEventListener("click", (event) => {
             // Check if the clicked element is NOT a descendant of the popup form
             event.preventDefault()
@@ -28,7 +28,8 @@ export class PopupForm{
         });
 
         this.popupEls.save.addEventListener("click", () => {
-            //this.saveForm()
+            this.saveButtonPressed(saveData)
+            this.closePopupForm()
         })
 
         this.popupEls.cancel.addEventListener("click", () => {
@@ -46,6 +47,16 @@ export class PopupForm{
         this.setFormOwned(rowData.owned)
         this.setFormWishlist(rowData.wishlist)
         this.setFormPrice(rowData.price)
+    }
+
+    saveButtonPressed(saveData) {
+        let name = this.popupEls["name"].innerText
+        let owned = this.popupEls["owned"].value;
+        let wishlist = this.popupEls["wishlist"].value;
+        let price = this.popupEls["price"].value;
+
+
+        saveData(name, owned, wishlist, price)
     }
 
     closePopupForm() {

@@ -8,7 +8,7 @@ console.log(`main loaded`);
 let popupForm = new PopupForm(saveForm)
 let table = new Table(database, popupForm)
 
-function saveForm() {
+function saveForm(name, owned, wishlist, price) {
     console.log("saved form")
-    table.updateTableData()
+    table.updateTableRow(name, owned, wishlist, price)
 }

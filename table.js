@@ -4,7 +4,7 @@ export class Table{
     constructor(database, popupForm) {
         this.table = document.getElementById("databaseTable");
 
-        this.rows = []
+        this.rows = {}
 
         this.headerEls = {
             "name": document.getElementById("nameHeader"),
@@ -31,13 +31,21 @@ export class Table{
     }
 
     buildTable(database, popupForm) {
-        for (let paint in database.paints) {
+        for (let i in database.paints) {
             let newRow = document.createElement("tr");
-            if (paint !== 'paint name') {
-            let inputData = database['paints'][paint]
+            let inputData = database['paints'][i]
             let row = new Row(newRow, inputData, popupForm)
             this.table.appendChild(newRow)
-            this.rows.push(row)
+
+            let paintName = database["paints"][i]["name"]
+            this.rows[paintName] = row
+        }
+    }
+
+    updateTableRow(paintName, owned, wishlist, price) {
+        for (let paint in this.rows) {
+            if (paint === paintName) {
+                this.rows[paint].updateRow(owned, wishlist, price)
             }
         }
     }
