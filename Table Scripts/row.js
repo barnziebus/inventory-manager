@@ -106,8 +106,7 @@ export class Row{
         let wishlistCell = this.cellContainers["wishlist"].getElementsByTagName("span")[0];
         let priceCell = this.cellContainers["price"].getElementsByTagName("span")[0];
 
-        if (typeof owned !== "undefined" || owned !== "") {
-            //console.log(ownedCell)
+        if (owned !== '') {
             ownedCell.textContent = owned;
         };
 

@@ -113,10 +113,15 @@ export class DatabaseHandler {
     updateData(paintName, owned, wishlist, price) {
         for (let paint of this.database.paints) {
             if (paint.name === paintName) {
-                paint["owned"] = owned
-                paint["wishlist"] = wishlist
-                paint["price"] = price
-                console.log(paint)
+                if (owned !== "") {
+                    paint["owned"] = owned
+                }
+                if (wishlist !== "") {
+                    paint["wishlist"] = wishlist
+                }
+                if (price !== "") {
+                    paint["price"] = price
+                }
             }
         }
     }

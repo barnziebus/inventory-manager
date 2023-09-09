@@ -54,8 +54,7 @@ export class PopupForm{
         let owned = this.popupEls["owned"].value;
         let wishlist = this.popupEls["wishlist"].value;
         let price = this.popupEls["price"].value;
-
-
+        
         saveData(name, owned, wishlist, price)
     }
 
