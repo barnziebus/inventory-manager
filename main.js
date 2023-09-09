@@ -1,6 +1,6 @@
-import { DatabaseHandler } from "./Database/database.js";
-import { Table } from "./Table Scripts/table.js";
-import { PopupForm } from "./Table Scripts/popup.js";
+import { DatabaseHandler } from "https://barnziebus.github.io/inventory-manager/Database/database.js";
+import { Table } from "https://barnziebus.github.io/inventory-manager/Table Scripts/table.js";
+import { PopupForm } from "https://barnziebus.github.io/inventory-manager/Table Scripts/popup.js";
 
 
 console.log(`main loaded`);

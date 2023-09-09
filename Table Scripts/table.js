@@ -1,4 +1,4 @@
-import { Row } from "./row.js";
+import { Row } from "https://barnziebus.github.io/inventory-manager/row.js";
 
 export class Table{
     constructor(dbHandler, popupForm) {
