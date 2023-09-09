@@ -1,5 +1,6 @@
 table {
     width: 100%;
+    user-select: none;
 }
 
 td {
@@ -40,3 +41,10 @@ tr:hover {
     background-color: rgb(4, 14, 14);
     transition: background-color ease 0.35s;
 }
+
+td:nth-child(1), th:nth-child(1) { width: 35%; }
+td:nth-child(2), th:nth-child(2) { width: 15%; }
+td:nth-child(3), th:nth-child(3) { width: 10%; }
+td:nth-child(4), th:nth-child(4) { width: 10%; }
+td:nth-child(5), th:nth-child(5) { width: 10%; }
+td:nth-child(6), th:nth-child(6) { width: 20%; }
