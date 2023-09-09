@@ -54,11 +54,15 @@ export class PopupForm{
         let owned = this.popupEls["owned"].value;
         let wishlist = this.popupEls["wishlist"].value;
         let price = this.popupEls["price"].value;
-        
+
         saveData(name, owned, wishlist, price)
     }
 
     closePopupForm() {
+        this.popupEls["owned"].value = "";
+        this.popupEls["wishlist"].value = "";
+        this.popupEls["price"].value = "";
+
         this.popupBackground.style.display = "none";
         this.popupForm.style.display = "none"
     }

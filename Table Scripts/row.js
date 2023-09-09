@@ -110,11 +110,11 @@ export class Row{
             ownedCell.textContent = owned;
         };
 
-        if (typeof wishlist !== "undefined" || wishlist !== "") {
+        if (wishlist !== "") {
             wishlistCell.innerText = wishlist;
         };
 
-        if (typeof price !== "undefined" || price !== "") {
+        if (price !== "") {
             priceCell.innerText = price;
         };
         
