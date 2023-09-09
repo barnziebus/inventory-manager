@@ -100,14 +100,14 @@ export class Row{
     }
 
     updateRow(owned, wishlist, price) {
-        console.log(`update row: - owned var: ${owned}, wishlist var: ${wishlist}, price var: ${price}`)
+        //console.log(`update row: - owned var: ${owned}, wishlist var: ${wishlist}, price var: ${price}`)
 
         let ownedCell = this.cellContainers["owned"].getElementsByTagName("span")[0];
         let wishlistCell = this.cellContainers["wishlist"].getElementsByTagName("span")[0];
         let priceCell = this.cellContainers["price"].getElementsByTagName("span")[0];
 
         if (typeof owned !== "undefined" || owned !== "") {
-            console.log(ownedCell)
+            //console.log(ownedCell)
             ownedCell.textContent = owned;
         };
 

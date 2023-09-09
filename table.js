@@ -1,10 +1,10 @@
 import { Row } from "./row.js";
 
 export class Table{
-    constructor(database, popupForm) {
+    constructor(dbHandler, popupForm) {
         this.table = document.getElementById("databaseTable");
 
-        this.rows = {}
+        this.rows = {};
 
         this.headerEls = {
             "name": document.getElementById("nameHeader"),
@@ -23,30 +23,30 @@ export class Table{
             "owned": document.getElementById("ownedSearchInput"),
             "wishlist": document.getElementById("wishlistSearchInput"),
             "price": document.getElementById("priceSearchInput"),
-        }
+        };
 
-        this.buildTable(database, popupForm)
-        this.setHeaderListeners()
-        this.setSearchListeneres()
+        this.buildTable(dbHandler.database, popupForm);
+        this.setHeaderListeners();
+        this.setSearchListeneres();
     }
 
     buildTable(database, popupForm) {
         for (let i in database.paints) {
             let newRow = document.createElement("tr");
-            let inputData = database['paints'][i]
-            let row = new Row(newRow, inputData, popupForm)
-            this.table.appendChild(newRow)
+            let inputData = database['paints'][i];
+            let row = new Row(newRow, inputData, popupForm);
+            this.table.appendChild(newRow);
 
-            let paintName = database["paints"][i]["name"]
-            this.rows[paintName] = row
+            let paintName = database["paints"][i]["name"];
+            this.rows[paintName] = row;
         }
     }
 
     updateTableRow(paintName, owned, wishlist, price) {
         for (let paint in this.rows) {
             if (paint === paintName) {
-                this.rows[paint].updateRow(owned, wishlist, price)
-            }
+                this.rows[paint].updateRow(owned, wishlist, price);
+            };
         }
     }
 
