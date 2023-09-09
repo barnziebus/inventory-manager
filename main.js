@@ -1,6 +1,6 @@
-import { DatabaseHandler } from "./database.js";
-import { Table } from "./table.js";
-import { PopupForm } from "./popup.js";
+import { DatabaseHandler } from "./Database/database.js";
+import { Table } from "./Table Scripts/table.js";
+import { PopupForm } from "./Table Scripts/popup.js";
 
 
 console.log(`main loaded`);
