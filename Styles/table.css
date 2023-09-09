@@ -4,17 +4,39 @@ table {
 
 td {
     text-align: center;
+    border: solid 2px transparent;
+    border-radius: 5px;
+    padding: 3px;
+    margin: 3px;
 }
 
 th {
+    background-color: rgb(8, 71, 73);
+    color: rgb(224, 224, 224);
     cursor: pointer;
+    padding: 3px;
+    font-size: 25px;
+    border: solid 2px transparent;
+}
+
+.th-sort {
+    background-color: rgb(8, 71, 73);
+    font-size: 15px;
+    border: solid 2px transparent;
+}
+
+th:hover {
+    border-color: red;
+    border: solid 2px red;
 }
 
 tr {
-    background-color: rgb(244, 245, 189);
+    background-color: rgb(7, 23, 32);
     cursor: pointer;
+    transition: background-color ease 0.35s;
 }
 
 tr:hover {
-    background-color: azure;
+    background-color: rgb(4, 14, 14);
+    transition: background-color ease 0.35s;
 }
