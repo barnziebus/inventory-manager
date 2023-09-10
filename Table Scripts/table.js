@@ -110,7 +110,7 @@ export class Table{
         }
     }
 
-    sortTable(n) {
+    sortTable(n) {         
         let switching = true;
         let dir = "asc";
         let switchCount = 0;
@@ -121,36 +121,36 @@ export class Table{
             switching = false;
             let rows = this.table.rows;
 
-            for (i=2; i < (rows.length - 1); i++) { //loop through all rows except the header row
-                shouldSwitch = false;
+                for (i=2; i < (rows.length - 1); i++) { //loop through all rows except the header row
+                    shouldSwitch = false;
 
-                let x = rows[i].getElementsByTagName("span")[n];
-                let y = rows[i + 1].getElementsByTagName("span")[n];
+                    let x = rows[i].getElementsByTagName("span")[n];
+                    let y = rows[i + 1].getElementsByTagName("span")[n];
 
-                if (dir == "asc") {
-                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-                        shouldSwitch = true;
-                        break;
-                    }
-                } else if (dir == "desc") {
-                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-                        shouldSwitch = true;
-                        break;
+                    if (dir == "asc") {
+                        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    } else if (dir == "desc") {
+                        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                            shouldSwitch = true;
+                            break;
+                        }
                     }
                 }
-            }
 
-            if (shouldSwitch) {
-                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-                switching = true;
-                switchCount ++;
-            } else {
-                if (switchCount == 0 && dir == "asc") {
-                    dir = "desc";
+                if (shouldSwitch) {
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
                     switching = true;
+                    switchCount ++;
+                } else {
+                    if (switchCount == 0 && dir == "asc") {
+                        dir = "desc";
+                        switching = true;
+                    }
                 }
             }
+            
         }
     }
-
-}
