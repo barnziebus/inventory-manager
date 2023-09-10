@@ -3,3 +3,18 @@ body {
     color: rgb(219, 219, 219);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+h1 {
+    color: rgb(236, 253, 253);
+    text-align: center;
+}
+
+h2 {
+    color: rgb(236, 253, 253);
+    text-align: center;
+}
+
+h3 {
+    padding: 2px;
+    margin: 3px;
+}

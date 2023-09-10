@@ -12,17 +12,68 @@
 }
 
 .popup-content {
-    background-color: #fff;
-    max-width: 500px;
+    background-color: #0c4961;
+    display: inline-block;
+    max-width: 200px;
     margin: 20px;
     padding: 20px;
+    border-radius: 10px;
 }
 
 .color-swatch {
     display: inline-block;
     background-color: none;
     border-radius: 3px;
-    min-width: 100px;
-    min-height: 15px;
-    border: solid 2px black
+    min-width: 60px;
+    min-height: 20px;
+    border: solid 2px black;
+}
+
+.popup-input {
+    background-color: transparent;
+    color: aliceblue;
+    text-align: center;
+    width: 50px;
+    padding: 10px;
+
+    border: none;
+    border-radius: 10px;   
+    transition: background-color 0.5s ease; 
+}
+
+.popup-input:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: background-color 0.5s ease;
+}
+
+.popup-input:focus {
+    background-color: rgba(0, 0, 0, 0.5);
+    outline: none;
+    
+}
+
+.input-variable-text {
+    padding: 3px;
+    margin: 10px;
+    display: flex;
+}
+
+.popup-buttons {
+    color: aliceblue;
+    font-size: 16px;
+    background-color: rgb(15, 148, 137);
+    min-width: 120px;
+    min-height: 50px;
+    border-radius: 20px;
+    border: none;
+    padding: 10px;
+    margin: 10px;
+}
+
+.popup-buttons:hover {
+    background-color: rgb(38, 105, 72);
+}
+
+.popup-heading h3 {
+    color: none;
 }

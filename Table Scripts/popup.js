@@ -72,8 +72,27 @@ export class PopupForm{
     }
 
     setFormColour(paintHex) {
-        this.popupEls["color"].innerText = paintHex
-        this.popupEls["colorSwatch"].style.backgroundColor = paintHex
+        this.popupEls["color"].innerText = paintHex;
+        // this.popupEls["colorSwatch"].style.backgroundColor = paintHex;
+        this.popupForm.style.backgroundColor = paintHex;
+    
+        // Function to determine text colour based on background color
+        let color = paintHex.replace(/^#/, '');
+        const r = parseInt(color.slice(0, 2), 16);
+        const g = parseInt(color.slice(2, 4), 16);
+        const b = parseInt(color.slice(4, 6), 16);
+    
+        // Calculate relative luminance
+        const luminance = (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255;
+    
+        // Choose contrasting color
+        const textColor = luminance > 0.5 ? '#000000' : '#FFFFFF';
+    
+        // Apply the text color to all elements within the popup container
+        const popupElements = this.popupForm.querySelectorAll('*');
+        popupElements.forEach((element) => {
+            element.style.color = textColor;
+        });
     }
 
     setFormType(paintType) {
